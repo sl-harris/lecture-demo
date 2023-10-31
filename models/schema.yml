@@ -1,0 +1,15 @@
+
+version: 2
+
+sources:
+  - name: raw
+    schema: gz_raw_data
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+        tests:
+          - unique:
+              column_name: "(orders_id || '-' || pdt_id)"
+
+models:
+  - name: int_sales_2021
